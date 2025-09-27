@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Shade File Uploader</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Updated Blue Shades */
+    :root {
+      --primary-color: #1ab5e8;    /* Google Blue for depth */
+      --primary-hover: #1595b9;
+      --bg-color: #e8f0fe;         /* Very light blue background */
+      --card-bg: #fff;
+      --text-color: #333;
+      --shadow: 0 6px 20px rgba(26, 115, 232, 0.15); /* Blue-tinted shadow */
+      --border-radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* Applying 'Poppins' as the primary font */
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: var(--text-color);
+    }
+
+    .upload-box {
+      background: var(--card-bg);
+      padding: 50px 70px; /* Reduced padding for a tighter look */
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      width: 520px;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    label {
+      font-weight: 600; /* Made label bolder */
+      display: block;
+      margin: 1.5rem 0 0.5rem 0;
+      color: var(--primary-color);
+      text-align: left;
+    }
+
+    /* Style for the file inputs container */
+    .input-group {
+        border: 2px dashed #a0c3ff; /* Lighter blue dashed border */
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        transition: border-color 0.3s;
+    }
+
+    .input-group:hover {
+        border-color: var(--primary-hover);
+    }
+
+    input[type="file"] {
+      padding: 10px 0;
+      display: block;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 14px 28px;
+      border: none;
+      background: var(--primary-color);
+      color: white;
+      font-size: 19px;
+      font-weight: 600;
+      border-radius: 40px;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4);
+    }
+
+    button:hover {
+      background: var(--primary-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(26, 115, 232, 0.6);
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="upload-box">
+    <h2>File Upload Center</h2>
+    
+    <div class="input-group">
+        <label for="fileUpload">Select Multiple Files:</label>
+        <input type="file" id="fileUpload" name="files[]" multiple>
+    </div>
+
+    <div class="input-group">
+        <label for="folderUpload">Select a Folder:</label>
+        <input type="file" id="folderUpload" name="folderFiles[]" webkitdirectory directory multiple>
+    </div>
+
+    <button type="submit">Start Upload</button>
+  </div>
+
+</body>
+</html>

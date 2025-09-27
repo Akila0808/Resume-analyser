@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacancy Page</title>
+  <style>
+    :root {
+      --primary-color: #21c6f3; /* Sky blue */
+      --primary-hover: #19add2;
+      --bg-color: #f4f9ff;
+      --card-bg: #fff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --border-radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .upload-box {
+      background: var(--card-bg);
+      padding: 70px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      width: 520px;
+      animation: fadeIn 1.9s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 10px;
+      color: #444;
+      text-align: left;
+    }
+    
+    /* New CSS for the Select dropdown */
+    select {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 30px; /* Space before button */
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #333;
+      background-color: #f9f9f9;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 12px 30px;
+      border: none;
+      background: var(--primary-color);
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      /* Center the button */
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="upload-box">
+    <h2>HireLens 🔍</h2>
+    
+    <form action="upload.html" method="POST">
+      
+      <label for="vacancySelect">Select a Vacancy:</label>
+      <select id="vacancySelect" name="vacancy">
+        <option value="" disabled selected>-- Choose a position --</option>
+        <option value="ui_ux_designer">UI/UX Designer</option>
+        <option value="full_stack_developer">Full Stack Developer</option>
+        <option value="ethical_hacker">Ethical Hacker</option>
+      </select>
+
+      <button type="submit">Apply Now</button>
+
+    </form>
+  </div>
+
+</body>
+</html>
